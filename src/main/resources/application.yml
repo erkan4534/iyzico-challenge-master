@@ -1,0 +1,25 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:hsqldb:mem:db
+    driverClassName: org.hsqldb.jdbc.JDBCDriver
+    username: root
+    password: pass
+    data  : classpath:db/sql/insert-data.sql
+    schema: classpath:db/sql/create-db.sql
+    initialization-mode: embedded
+  jpa:
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+
+
+
+
+
+
