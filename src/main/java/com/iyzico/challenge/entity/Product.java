@@ -1,5 +1,7 @@
 package com.iyzico.challenge.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
@@ -13,6 +15,9 @@ public class Product {
     private String description;
     private Long stock;
     private BigDecimal price;
+    @Version
+    private int version;
+
 
     public Long getId() {
         return id;
@@ -53,4 +58,14 @@ public class Product {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
+
+    public int getVersion() {
+        return version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
+    }
+
+
 }

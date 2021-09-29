@@ -1,7 +1,14 @@
 package com.iyzico.challenge.entity;
 
-import javax.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jdk.nashorn.internal.objects.annotations.Getter;
+import org.springframework.data.annotation.Version;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.math.BigDecimal;
+
 
 @Entity
 public class Payment {
@@ -11,6 +18,8 @@ public class Payment {
     private Long id;
     private BigDecimal price;
     private String bankResponse;
+    @Version
+    private int version;
 
     public Long getId() {
         return id;
@@ -34,5 +43,13 @@ public class Payment {
 
     public void setBankResponse(String bankResponse) {
         this.bankResponse = bankResponse;
+    }
+
+    public int getVersion() {
+        return version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
     }
 }
